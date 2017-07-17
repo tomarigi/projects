@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'project/index'
-  get 'project/show'
+
+  resources :project, only: [:index, :show]
 
   root 'project#index'
 

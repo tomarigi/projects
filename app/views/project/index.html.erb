@@ -9,24 +9,25 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="project">
-            <h3>つながる海外コミュニティ Canpath</h3>
-            <div class="screen">
-              <%= image_tag('canpath_header.png', class: 'img-responsive') %>
-            </div>
-            <p class="description">
-              CANPATHは、海外に行く日本人を増やしたいという想いから生まれました。
-              Startup Weekend Yokohamaという素晴らしいイベントで出会ったメンバーと共に、
-              様々な方からのアドバイスに支えられながらイベント終了後もサービスを継続させています。
-              海外体験を共有できるサービスを提供し、世界へ飛び立つキッカケが生まれる場所を目指しています。
-            </p>
-            <div class="divider"></div>
-            <div class="visit">
-              <a class="button" href="">
-                このプロジェクトをもっと見る
-              </a>
-            </div>
-          </div>
+
+          <% if @projects %>
+            <% @projects.each do |project| %>
+                  <div class="project">
+                    <h3><%= project["title"] %></h3>
+                    <div class="screen">
+                      <%= image_tag(project["img"], class: 'img-responsive') %>
+                    </div>
+                    <p class="description">
+                      <%= project["content"] %>
+                    </p>
+                    <div class="divider"></div>
+                    <div class="visit">
+                      <%= link_to 'このプロジェクトをもっと見る', project_path(project["id"]), :class => 'button' %>
+                    </div>
+                  </div>
+            <% end %>
+          <% end %>
+
         </div>
       </div>
     </div>
