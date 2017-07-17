@@ -1,6 +1,7 @@
 class ProjectController < ApplicationController
   def index
-    @projects = ActiveSupport::JSON.decode(File.read('projects.json'))
+    json = ActiveSupport::JSON.decode(File.read('projects.json'))
+    @projects = json.sort { |x, y| Time.parse(x["updated"]) <=> Time.parse(y["updated"]) }.reverse
   end
 
   def show
