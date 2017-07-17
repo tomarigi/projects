@@ -4,13 +4,29 @@
     "title": "つながる海外コミュニティ Canpath",
     "img": "canpath_header.png",
     "content": "CANPATHは、海外に行く日本人を増やしたいという想いから生まれました。Startup Weekend Yokohamaという素晴らしいイベントで出会ったメンバーと共に、様々な方からのアドバイスに支えられながらイベント終了後もサービスを継続させています。海外体験を共有できるサービスを提供し、世界へ飛び立つキッカケが生まれる場所を目指しています。",
-    "updated": "2017/07/17"
+    "updated": "2017/07/17",
+    "url": "http://www.canpath.jp/",
+    "description": "",
+    "organization": "Canpath",
+    "from": "2014年4月",
+    "personal": {
+      "author": "高柴 慶人",
+      "class": "1期"
+    }
   },
   {
     "id": "2",
     "title": "家族をひろげ、ひとりひとりを幸せに manma",
     "img": "manma_header.png",
     "content": "manmaは家族の枠を超えて人と人が支え合う社会をつくります。そのために、ワンデー型子育て家庭訪問「家族留学」を運営し、企業向けにコンサルティング・イベント企画・PR サポートなどをサービスとして提供しております。",
-    "updated": "2017/07/18"
+    "updated": "2017/07/18",
+    "url": "http://manma.co/",
+    "description": "",
+    "organization": "manma",
+    "from": "2014年1月",
+    "personal": {
+      "author": "青木優",
+      "class": "2期"
+    }
   }
 ]
