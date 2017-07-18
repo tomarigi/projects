@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row header">
         <div class="col-md-12">
-          <h3>トビタテプロジェクト一覧</h3>
-          <p><a href="http://www.tobitate.mext.go.jp/">トビタテ留学JAPAN日本代表プログラム</a>に参加した人が携わるプロジェクト一覧です。</p>
+          <h4>トビタテプロジェクト一覧</h4>
+          <p><a href="//www.tobitate.mext.go.jp/">トビタテ留学JAPAN日本代表プログラム</a>に参加した人が携わるプロジェクト一覧です。</p>
         </div>
       </div>
       <div class="row">
@@ -12,14 +12,17 @@
 
           <% if @projects %>
             <% @projects.each do |project| %>
-                  <div class="project">
-                    <h3><%= project["title"] %></h3>
-                    <div class="screen">
-                      <%= image_tag(project["img"], class: 'img-responsive') %>
+                  <div class="project col-md-6 col-sm-12">
+                    <div class="project_wrapper">
+                      <h3><%= project["title"] %></h3>
+                      <div class="screen">
+                        <%= image_tag(project["img"], class: 'img-responsive') %>
+                      </div>
+                      <p class="description">
+                        <%= project["content"] %>
+                      </p>
                     </div>
-                    <p class="description">
-                      <%= project["content"] %>
-                    </p>
+
                     <div class="divider"></div>
                     <div class="visit">
                       <%= link_to 'このプロジェクトをもっと見る', project_path(project["id"]), :class => 'button' %>
