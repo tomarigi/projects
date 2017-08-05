@@ -4,9 +4,9 @@ class ProjectController < ApplicationController
     json = ActiveSupport::JSON.decode(File.read('projects.json'))
     @projects = json.sort { |x, y| Time.parse(x["updated"]) <=> Time.parse(y["updated"]) }.reverse
 
-    query = params[:q]
-    unless query.nil?
-      @projects = search(@projects, query)
+    @query = params[:q]
+    unless @query.nil?
+      @projects = search(@projects, @query)
     end
 
   end

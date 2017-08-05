@@ -5,10 +5,22 @@
         <div class="col-md-12">
           <h4>トビタテプロジェクト一覧</h4>
           <p><a href="//www.tobitate.mext.go.jp/">トビタテ留学JAPAN日本代表プログラム</a>に参加した人が携わるプロジェクト一覧です。</p>
+          <form action="/" method="get">
+            <div class="col-md-10">
+              <input type="text" name="q" value="<%= @query %>" class="form-control" placeholder="好きな文字で検索...">
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-primary">検索！</button>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+
+          <% if @query && @query != "" %>
+          <p>検索結果: <%= @projects.length %>件</p>
+          <% end %>
 
           <% if @projects %>
             <% @projects.each do |project| %>
