@@ -30,10 +30,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails'
 
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
