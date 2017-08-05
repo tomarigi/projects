@@ -5,16 +5,8 @@ class ProjectController < ApplicationController
     @projects = json.sort { |x, y| Time.parse(x["updated"]) <=> Time.parse(y["updated"]) }.reverse
 
     query = params[:q]
-    if query != ""
-      results = []
-
-      # Search in json with query
-      @projects.each do |obj|
-        result = obj.select {|k, v| v.include?(query)}
-        results.push(obj) unless result.empty?
-      end
-
-      @projects = results
+    unless query.nil?
+      @projects = search(@projects, query)
     end
 
   end
@@ -23,4 +15,18 @@ class ProjectController < ApplicationController
     json = ActiveSupport::JSON.decode(File.read('projects.json'))
     @project = json[params[:id].to_i - 1]
   end
+
+
+  def search(array, query)
+    results = []
+
+    # Search in json with query
+    array.each do |obj|
+      result = obj.select {|k, v| v.include?(query)}
+      results.push(obj) unless result.empty?
+    end
+
+    results
+  end
+
 end
