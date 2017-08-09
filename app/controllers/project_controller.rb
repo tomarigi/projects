@@ -1,4 +1,5 @@
 class ProjectController < ApplicationController
+  layout 'application'
   require "json"
   def index
     json = ActiveSupport::JSON.decode(File.read('projects.json'))
