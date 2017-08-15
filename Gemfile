@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'devise-i18n'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
