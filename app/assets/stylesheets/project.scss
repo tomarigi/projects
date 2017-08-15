@@ -14,13 +14,18 @@
   color: #fff;
 }
 
-#profile_edit .field {
-  margin-top: 15px;
-
-}
-
-.border_danger {
-  border: 3px solid #950000;
-  padding: 20px 30px;
-  margin: 30px;
+#profile_edit {
+  margin-top: 30px;
+  .card {
+    background-color: #fff;
+    padding: 15px 30px;
+  }
+  .field {
+    margin-top: 15px;
+  }
+  .border_danger {
+    border: 3px solid #cb0000;
+    padding: 20px 30px;
+    margin: 30px;
+  }
 }
