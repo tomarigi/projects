@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :user do
+    resources :profile, only: [:index, :edit, :update]
+  end
+
   devise_for :users, only: [:sign_in, :sign_out, :session, :password]
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'

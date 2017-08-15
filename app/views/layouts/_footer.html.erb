@@ -4,13 +4,6 @@
       <div class="col-sm-3 copyright">
         Tomarigi 2017
       </div>
-      <div class="col-sm-3">
-        <% if user_signed_in? %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-            <%= link_to 'ログイン', new_user_session_path %>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>
