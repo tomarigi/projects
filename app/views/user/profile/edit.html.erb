@@ -1,2 +1,21 @@
-<h1>User::Profile#edit</h1>
-<p>Find me in app/views/user/profile/edit.html.erb</p>
+<div class="col-md-8 col-md-offset-2" id="profile">
+  <div class="card">
+    <h3>プロフィール</h3>
+
+    <%= form_for @profile, url: user_profile_path do |f| %>
+
+        <div class="form-group">
+          <%= f.label :name, '名前', class: '' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :term, 'トビタテ' %>
+          <%= f.select :term, %w(1 2 3 4 5 6 7 8 9 10 11 12), include_blank: false, class: 'form-control' %>期
+        </div>
+
+        <%= f.submit '更新する', class: 'button button-small' %>
+
+    <% end %>
+  </div>
+</div>

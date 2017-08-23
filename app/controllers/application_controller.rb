@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     # redirect user edit path if user visit first time, to change password.
-    current_user.sign_in_count < 2 ? edit_user_registration_path : root_path
+    current_user.sign_in_count < 2 ? edit_user_profile_path(current_user) : root_path
   end
 
   def after_login
