@@ -1,3 +1,17 @@
 // Place all the styles related to the user/profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#profile .card {
+  border: 2px solid #EDEDED;
+  .form-control.bottom {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

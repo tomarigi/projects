@@ -10,17 +10,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= favicon_link_tag('favicon.ico') %>
 </head>
-<style>
-  html {
-    height: 100%;
-    background: #5E7A9B;
-    background: -webkit-linear-gradient(top, #355069 0, #5E7A9B 100%);
-    background: -moz-linear-gradient(top, #355069 0, #5E7A9B 100%);
-    background: -o-linear-gradient(top, #355069 0, #5E7A9B 100%);
-    background: linear-gradient(top, #355069 0, #5E7A9B 100%);
-  }
-</style>
 <body>
+<%= render 'layouts/user/header' %>
 <%= yield %>
 <%= render 'layouts/analytics' %>
 </body>

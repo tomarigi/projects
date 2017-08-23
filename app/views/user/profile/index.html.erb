@@ -1,22 +1,22 @@
 <div class="col-md-8 col-md-offset-2" id="profile">
   <div class="card">
     <h3>プロフィール</h3>
-    <table>
-      <tbody>
-      <tr>
-        <td>名前: </td>
-        <td><%= @profile.name %></td>
-      </tr>
-      <tr>
-        <td>トビタテ: </td>
-        <td><%= @profile.term %>期</td>
-      </tr>
-      <tr>
-        <td>作成日: </td>
-        <td><%= @profile.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="form-group">
+      <label for="">名前: </label>
+      <div class="form-control bottom"><%= @profile.name %></div>
+    </div>
+    <div class="form-group">
+      <label for="">トビタテ: </label>
+      <div class="form-control bottom"><%= @profile.term %>期</div>
+    </div>
+    <div class="form-group">
+      <label for="">作成日: </label>
+      <div class="form-control bottom"><%= @profile.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></div>
+    </div>
+    <div class="form-group">
+      <label for="">最終更新日: </label>
+      <div class="form-control bottom"><%= @profile.updated_at.strftime('%Y年%m月%d日 %H:%M:%S') %></div>
+    </div>
   </div>
   <%= link_to '編集', edit_user_profile_path(current_user), class: 'btn btn-default' %>
 </div>

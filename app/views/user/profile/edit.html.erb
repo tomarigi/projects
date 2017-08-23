@@ -1,6 +1,6 @@
 <div class="col-md-8 col-md-offset-2" id="profile">
   <div class="card">
-    <h3>プロフィール</h3>
+    <h3>プロフィールの編集</h3>
 
     <%= form_for @profile, url: user_profile_path do |f| %>
 
@@ -14,7 +14,8 @@
           <%= f.select :term, %w(1 2 3 4 5 6 7 8 9 10 11 12), include_blank: false, class: 'form-control' %>期
         </div>
 
-        <%= f.submit '更新する', class: 'button button-small' %>
+        <%= link_to 'キャンセル', user_profile_index_path, class: 'btn btn-default' %>
+        <%= f.submit '更新する', class: 'btn btn-primary' %>
 
     <% end %>
   </div>

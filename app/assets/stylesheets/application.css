@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+#signup {
+    background: #ffffff;
+}
+
+#signup a, #signup h4 {
+    color: #222 !important;
+}
+
+#signup .wrapper {
+    border: 2px solid #EDEDED;
+}
