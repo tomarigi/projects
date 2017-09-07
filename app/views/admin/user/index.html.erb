@@ -1,0 +1,30 @@
+
+
+<div class="col-md-10 col-md-offset-1">
+  <div class="panel panel-default">
+    <div class="panel-heading">ユーザ一覧</div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>メールアドレス</th>
+        <th>トビタテ期</th>
+        <th>アドミン</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.profile.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.profile.term %></td>
+            <td><%= user.is_admin %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
