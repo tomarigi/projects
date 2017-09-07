@@ -7,5 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.create!(email:'yoshihito522@gmail.com', password: '123123', password_confirmation: '123123')
+user = User.create!(
+    email:'yoshihito522@gmail.com',
+    password: '123123',
+    password_confirmation: '123123',
+    is_admin: true
+)
 user.create_profile(name: '高柴 慶人', term: '1')
