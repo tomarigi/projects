@@ -28,3 +28,9 @@
 #signup .wrapper {
     border: 2px solid #EDEDED;
 }
+
+.alert-notice {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
