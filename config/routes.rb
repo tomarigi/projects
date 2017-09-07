@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :user, only: [:new, :create]
+  end
+
   namespace :user do
     resources :profile, only: [:index, :edit, :update]
   end

@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   before_action :store_current_location, :unless => :devise_controller?
   after_action :after_login
 
+  include Admin::UserHelper
+
   # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-back-to-current-page-after-sign-in,-sign-out,-sign-up,-update
   private
   # override the devise helper to store the current location so we can
