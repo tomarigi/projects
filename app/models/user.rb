@@ -8,7 +8,6 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
 
   def admin?
-    p "self.is_admin?: #{self.is_admin?}"
     self.is_admin?
   end
 

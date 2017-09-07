@@ -11,6 +11,7 @@
         <th>メールアドレス</th>
         <th>トビタテ期</th>
         <th>アドミン</th>
+        <th colspan="2">アクション</th>
       </tr>
       </thead>
       <tbody>
@@ -21,6 +22,8 @@
             <td><%= user.email %></td>
             <td><%= user.profile.term %></td>
             <td><%= user.is_admin %></td>
+            <td><%= link_to '編集', '#' %></td>
+            <td><%= link_to '削除', '#' %></td>
           </tr>
       <% end %>
       </tbody>
