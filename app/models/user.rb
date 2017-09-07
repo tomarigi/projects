@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile, dependent: :destroy
-
+  accepts_nested_attributes_for :profile
 
   def admin?
+    p "self.is_admin?: #{self.is_admin?}"
     self.is_admin?
   end
 
