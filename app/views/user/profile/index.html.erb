@@ -18,5 +18,5 @@
       <div class="form-control bottom"><%= @profile.updated_at.strftime('%Y年%m月%d日 %H:%M:%S') %></div>
     </div>
   </div>
-  <%= link_to '編集', edit_user_profile_path(current_user), class: 'btn btn-default' %>
+  <%= link_to '編集', user_profile_edit_path, class: 'btn btn-default' %>
 </div>
