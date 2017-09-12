@@ -2,7 +2,7 @@
   <div class="card">
     <h3>プロフィールの編集</h3>
 
-    <%= form_for @profile, url: user_profile_path do |f| %>
+    <%= form_for @profile, url: user_profile_path(current_user) do |f| %>
 
         <div class="form-group">
           <%= f.label :name, '名前', class: '' %>

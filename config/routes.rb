@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   end
 
   namespace :user do
-    resources :profile, only: [:index, :edit, :update]
+    resources :profile, only: [:index, :update]
+    get 'profile/edit', to: 'profile#edit'
   end
 
   devise_for :users, only: [:sign_in, :sign_out, :session, :password]
