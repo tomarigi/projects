@@ -1,2 +1,7 @@
-<h1>User::Projects#edit</h1>
-<p>Find me in app/views/user/projects/edit.html.erb</p>
+
+<div class="col-md-8 col-md-offset-2" id="projects">
+  <%= form_for @project, url: user_project_path do |f| %>
+      <%= render 'user/projects/shared/form', f:f %>
+      <%= f.submit '更新', class: 'btn btn-primary' %>
+  <% end %>
+</div>

@@ -8,6 +8,7 @@ class User::ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
   end
 
   def create
@@ -19,6 +20,16 @@ class User::ProjectsController < ApplicationController
       # Error handling
       flash.now[:danger] = 'Project was not created.'
       render :new
+    end
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(project_params)
+      flash[:success] = 'Project was successfully updated.'
+      redirect_to user_projects_path
+    else
+      render 'edit'
     end
   end
   

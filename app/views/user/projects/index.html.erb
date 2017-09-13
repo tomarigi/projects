@@ -6,7 +6,12 @@
     <% if @projects.present? %>
         <ul>
           <% @projects.each do |project| %>
-              <li><%= link_to project.title, '#' %></li>
+              <li>
+                <%= link_to project.title, '#' %>
+                <span class="_action">
+                  <%= link_to '編集', edit_user_project_path(project.id), class: '_link' %>
+                </span>
+              </li>
           <% end %>
         </ul>
     <% else %>

@@ -7,5 +7,15 @@
   #project_list {
     border: 1px solid #EDEDED;
     padding: 15px;
+    li {
+      border-bottom: 1px solid #EDEDED;
+      padding: 20px 15px;
+      & > a {
+        color: #222;
+      }
+      ._action {
+        float: right;
+      }
+    }
   }
 }

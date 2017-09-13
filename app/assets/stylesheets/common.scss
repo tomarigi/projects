@@ -9,9 +9,8 @@ footer, header, menu, nav, section {
 }
 ol, ul {
   list-style: none;
+  padding: 0;
 }
-
-
 
 #signup {
   background: #ffffff;
@@ -27,4 +26,7 @@ ol, ul {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
+}
+
+._link {
 }
