@@ -5,8 +5,17 @@ Rails.application.routes.draw do
   end
 
   namespace :user do
+    ################
+    # User profile
+    ########
     resources :profile, only: [:index, :update]
+    # To avoid adding user number as parameter like :id
     get 'profile/edit', to: 'profile#edit'
+
+    ################
+    # User project
+    ########
+    resources :projects, except: [:show]
   end
 
   devise_for :users, only: [:sign_in, :sign_out, :session, :password]
