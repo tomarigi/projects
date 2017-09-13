@@ -18,12 +18,16 @@ Rails.application.routes.draw do
     resources :projects, except: [:show]
   end
 
+  ################
+  # Devise setting
+  ########
   devise_for :users, only: [:sign_in, :sign_out, :session, :password]
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
     put 'users' => 'devise/registrations#update', :as => 'user_registration'
   end
 
+  # Open Project
   resources :project, only: [:index, :show]
 
   root 'project#index'

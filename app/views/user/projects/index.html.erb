@@ -1,2 +1,16 @@
-<h1>User::Projects#index</h1>
-<p>Find me in app/views/user/projects/index.html.erb</p>
+
+<div class="col-md-8 col-md-offset-2" id="projects">
+
+  <%= link_to '新規作成', new_user_project_path, class: 'btn btn-default' %>
+  <div id="project_list">
+    <% if @projects.present? %>
+        <ul>
+          <% @projects.each do |project| %>
+              <li><%= link_to project.title, '#' %></li>
+          <% end %>
+        </ul>
+    <% else %>
+        <h4 class="text-center">プロジェクトはまだありません</h4>
+    <% end %>
+  </div>
+</div>

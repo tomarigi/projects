@@ -1,0 +1,13 @@
+<div class="form-group">
+  <%= f.label :title, 'プロジェクト名' %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <!-- TODO: add file input -->
+  <%= f.label :main_image, 'メイン画像' %>
+  <%= f.text_field :main_image, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :description, '紹介文' %>
+  <%= f.text_area :description, class: 'form-control', rows: 10 %>
+</div>

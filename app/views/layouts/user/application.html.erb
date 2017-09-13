@@ -12,7 +12,10 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
-<%= yield %>
+<div class="container">
+  <%= render 'shared/error_message' %>
+  <%= yield %>
+</div>
 <%= render 'layouts/analytics' %>
 </body>
 </html>
