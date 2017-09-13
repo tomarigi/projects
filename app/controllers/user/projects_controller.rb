@@ -32,6 +32,16 @@ class User::ProjectsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @project = Project.find(params[:id])
+    if @project.delete
+      flash[:success] = 'Project was successfully deleted.'
+    else
+      flash.now[:danger] = 'Project was not deleted.'
+    end
+    redirect_to user_projects_path
+  end
   
   private
 

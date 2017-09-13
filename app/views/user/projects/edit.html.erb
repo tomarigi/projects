@@ -4,4 +4,8 @@
       <%= render 'user/projects/shared/form', f:f %>
       <%= f.submit '更新', class: 'btn btn-primary' %>
   <% end %>
+  <div id="_dangerous_area">
+    <label>プロジェクトの削除:</label>
+    <%= link_to '削除する', user_project_path(@project), class: 'btn btn-danger text-align', method: :delete, data: {confirm: '本当に削除しますか？ この動作は取り消せません'}  %>
+  </div>
 </div>
