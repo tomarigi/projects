@@ -26,18 +26,18 @@
               <% @projects.each do |project| %>
                   <div class="project col-md-6 col-sm-12">
                     <div class="project_wrapper">
-                      <h3><%= project["title"] %></h3>
+                      <h3><%= project.title %></h3>
                       <div class="screen">
-                        <%= image_tag(project["img"], class: 'img-responsive') %>
+                        <%= image_tag(project.image, class: 'img-responsive') %>
                       </div>
                       <p class="description">
-                        <%= project["content"] %>
+                        <%= project.description %>
                       </p>
                     </div>
 
                     <div class="divider"></div>
                     <div class="visit">
-                      <%= link_to 'このプロジェクトをもっと見る', project_path(project["id"]), :class => 'button' %>
+                      <%= link_to 'このプロジェクトをもっと見る', project_path(project.id), :class => 'button' %>
                     </div>
                   </div>
               <% end %>

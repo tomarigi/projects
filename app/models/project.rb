@@ -12,4 +12,8 @@ class Project < ApplicationRecord
     self.is_published ? '公開済み' : '非公開'
   end
 
+  def image
+    self.main_image == "" ? 'default-thumbnail.png' : main_image
+  end
+
 end
