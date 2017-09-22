@@ -15,3 +15,25 @@
   <%= f.label :is_published, '公開' %>
   <%= f.check_box :is_published, value: true %>
 </div>
+
+<script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    var $textarea = $('#project_description');
+    var converter = new (showdown.Converter);
+
+    $(function () {
+        put_value()
+    });
+
+    $textarea.on('keyup', function () {
+        put_value();
+    });
+    
+    function put_value() {
+        var val = $textarea.val();
+        var html = converter.makeHtml(val);
+
+        $('#markdown-preview').html(html);
+    }
+</script>

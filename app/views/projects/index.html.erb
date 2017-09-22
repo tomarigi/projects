@@ -31,7 +31,7 @@
                         <%= image_tag(project.image, class: 'img-responsive') %>
                       </div>
                       <p class="description">
-                        <%= project.description %>
+                        <%= markdown(project.description) %>
                       </p>
                     </div>
 

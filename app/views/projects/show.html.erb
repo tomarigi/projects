@@ -14,7 +14,7 @@
                 <%= image_tag(@project.main_image, :class => 'img-responsive') %>
 
                 <p class="text">
-                  <%= @project.description %>
+                  <%= markdown(@project.description) %>
                 </p>
 
               </div>

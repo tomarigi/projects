@@ -12,6 +12,10 @@ ol, ul {
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 .m-t-10 {
   margin-top: 10px;
 }
@@ -43,5 +47,9 @@ ol, ul {
   }
   ._link {
     margin-left: 10px;
+  }
+  #markdown-preview {
+    border: 1px solid #EDEDED;
+    padding: 10px 15px;
   }
 }

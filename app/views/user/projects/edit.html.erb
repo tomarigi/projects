@@ -1,9 +1,16 @@
 
-<div class="col-md-8 col-md-offset-2" id="projects">
-  <%= form_for @project, url: user_project_path do |f| %>
-      <%= render 'user/projects/shared/form', f:f %>
-      <%= f.submit '更新', class: 'btn btn-primary' %>
-  <% end %>
+<div class="col-md-12" id="projects">
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_for @project, url: user_project_path do |f| %>
+          <%= render 'user/projects/shared/form', f:f %>
+          <%= f.submit '更新', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <%= render 'user/projects/shared/preview' %>
+    </div>
+  </div>
   <div id="_dangerous_area">
     <label>プロジェクトの削除:</label>
     <%= link_to '削除する', user_project_path(@project), class: 'btn btn-danger text-align', method: :delete, data: {confirm: '本当に削除しますか？ この動作は取り消せません'}  %>
