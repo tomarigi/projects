@@ -1,4 +1,4 @@
-class ProjectController < ApplicationController
+class ProjectsController < ApplicationController
   layout 'application'
   require "json"
   def index
@@ -13,8 +13,15 @@ class ProjectController < ApplicationController
   end
 
   def show
-    json = ActiveSupport::JSON.decode(File.read('projects.json'))
-    @project = json[params[:id].to_i - 1]
+    @project = Project.find(params[:id])
+
+    # Redirect to root when it is not published
+    unless @project.is_published
+      flash[:warning] = '削除されたか、非公開の設定になっています。'
+      redirect_to root_path
+    end
+
+    @profile = Profile.find_by(user_id: @project.user_id)
   end
 
 

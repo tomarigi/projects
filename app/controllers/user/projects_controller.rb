@@ -1,4 +1,7 @@
 class User::ProjectsController < ApplicationController
+
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
+
   def index
     @projects = Project.where(:user_id => current_user).order('created_at DESC')
   end
@@ -8,16 +11,13 @@ class User::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
   end
 
   def edit
-    @project = Project.find(params[:id])
   end
 
   def create
     @project = current_user.projects.build(project_params)
-    p "@project: #{@project.is_published}"
     if @project.save
       flash[:success] = 'Project was successfully created.'
       redirect_to user_projects_path
@@ -28,7 +28,6 @@ class User::ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.find(params[:id])
     if @project.update_attributes(project_params)
       flash[:success] = 'Project was successfully updated.'
       redirect_to user_projects_path
@@ -38,7 +37,6 @@ class User::ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:id])
     if @project.delete
       flash[:success] = 'Project was successfully deleted.'
     else
@@ -56,5 +54,9 @@ class User::ProjectsController < ApplicationController
         :description,
         :is_published
     ])
+  end
+
+  def set_project
+    @project = Project.find(params[:id])
   end
 end

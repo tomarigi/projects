@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   end
 
   # Open Project
-  resources :project, only: [:index, :show]
+  resources :projects, only: [:index, :show]
 
-  root 'project#index'
+  root 'projects#index'
 end

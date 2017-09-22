@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170913110532) do
     t.integer "user_id"
     t.date "established_at"
     t.boolean "is_published", default: false
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title", "user_id"], name: "index_projects_on_title_and_user_id", unique: true

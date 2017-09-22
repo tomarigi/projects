@@ -19,11 +19,11 @@
         <div class="col-md-12">
 
           <% if @query && @query != "" %>
-          <p>検索結果: <%= @projects.length %>件</p>
+              <p>検索結果: <%= @projects.length %>件</p>
           <% end %>
 
           <% if @projects %>
-            <% @projects.each do |project| %>
+              <% @projects.each do |project| %>
                   <div class="project col-md-6 col-sm-12">
                     <div class="project_wrapper">
                       <h3><%= project["title"] %></h3>
@@ -40,7 +40,7 @@
                       <%= link_to 'このプロジェクトをもっと見る', project_path(project["id"]), :class => 'button' %>
                     </div>
                   </div>
-            <% end %>
+              <% end %>
           <% end %>
 
         </div>
