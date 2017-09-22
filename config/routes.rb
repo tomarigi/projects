@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     ################
     # User project
     ########
-    resources :projects, except: [:show]
+    resources :projects
   end
 
   ################

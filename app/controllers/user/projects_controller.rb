@@ -1,10 +1,14 @@
 class User::ProjectsController < ApplicationController
   def index
-    @projects = Project.where(:user_id => current_user)
+    @projects = Project.where(:user_id => current_user).order('created_at DESC')
   end
 
   def new
     @project = Project.new
+  end
+
+  def show
+    @project = Project.find(params[:id])
   end
 
   def edit

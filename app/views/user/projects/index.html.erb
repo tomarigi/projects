@@ -13,7 +13,8 @@
                   <i class="fa fa-<%= project.status %>" aria-hidden="true"></i>
                   <%= link_to project.title, '#' %>
                   <span class="_action">
-                    <%= link_to '編集', edit_user_project_path(project.id), class: '_link' %>
+                    <%= link_to '詳細', user_project_path(project), class: '_link' %>
+                    <%= link_to '編集', edit_user_project_path(project), class: '_link' %>
                   </span>
                 </li>
             <% end %>

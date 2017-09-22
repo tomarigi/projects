@@ -31,3 +31,17 @@ ol, ul {
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
+
+#projects {
+  ._project {
+    margin-top: 20px;
+    border: 1px solid #EDEDED;
+    padding: 15px;
+    .form-group {
+      margin-top: 30px;
+    }
+  }
+  ._link {
+    margin-left: 10px;
+  }
+}

@@ -8,4 +8,8 @@ class Project < ApplicationRecord
     self.is_published ? 'unlock-alt' : 'lock'
   end
 
+  def publish
+    self.is_published ? '公開済み' : '非公開'
+  end
+
 end
