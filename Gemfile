@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'sitemap_generator'
-
+gem 'font-awesome-sass'
 gem 'rails-i18n'
 
 gem 'jquery-rails'
