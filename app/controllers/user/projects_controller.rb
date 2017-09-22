@@ -13,6 +13,7 @@ class User::ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
+    p "@project: #{@project.is_published}"
     if @project.save
       flash[:success] = 'Project was successfully created.'
       redirect_to user_projects_path
@@ -49,7 +50,8 @@ class User::ProjectsController < ApplicationController
     params.require(:project).permit([
         :title,
         :main_image,
-        :description
+        :description,
+        :is_published
     ])
   end
 end
