@@ -40,6 +40,9 @@ gem 'devise-i18n'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# markdown
+gem 'redcarpet'
+
 # Search gem
 gem 'ransack', github: 'activerecord-hackery/ransack'
 

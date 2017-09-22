@@ -13,7 +13,7 @@
     <div class="form-group">
       <label for="">紹介文</label>
       <div>
-        <%= @project.description %>
+        <%= markdown(@project.description) %>
       </div>
     </div>
     <div class="form-group">

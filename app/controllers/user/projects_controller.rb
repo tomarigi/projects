@@ -20,7 +20,7 @@ class User::ProjectsController < ApplicationController
     @project = current_user.projects.build(project_params)
     if @project.save
       flash[:success] = 'Project was successfully created.'
-      redirect_to user_projects_path
+      redirect_to user_project_path @project
     else
       # Error handling
       render :new
@@ -30,7 +30,7 @@ class User::ProjectsController < ApplicationController
   def update
     if @project.update_attributes(project_params)
       flash[:success] = 'Project was successfully updated.'
-      redirect_to user_projects_path
+      redirect_to user_project_path @project
     else
       render :edit
     end

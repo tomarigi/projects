@@ -1,11 +1,9 @@
 class ProjectsController < ApplicationController
   layout 'application'
-  require "json"
-  def index
 
+  def index
     @query = Project.search(params[:q])
     @projects = @query.result.includes(:profile).where(is_published: true)
-
   end
 
   def show
