@@ -3,9 +3,8 @@ class ProjectsController < ApplicationController
   require "json"
   def index
 
-    @projects = Project.where(is_published: true).order('updated_at DESC')
-
-    @query = params[:q]
+    @query = Project.search(params[:q])
+    @projects = @query.result.includes(:profile).where(is_published: true)
 
   end
 
