@@ -2,6 +2,7 @@
 
 <div class="col-md-8 col-md-offset-2" id="projects">
   <%= form_for @project, url: user_projects_path do |f| %>
+      <%= render 'shared/error_message', object: f.object %>
       <%= render 'user/projects/shared/form', f:f %>
   <%= f.submit '作成', class: 'btn btn-primary' %>
   <% end %>

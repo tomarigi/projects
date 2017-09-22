@@ -3,7 +3,7 @@
     <h3>プロフィールの編集</h3>
 
     <%= form_for @profile, url: user_profile_path(current_user) do |f| %>
-
+        <%= render 'shared/error_message', object: f.object %>
         <div class="form-group">
           <%= f.label :name, '名前', class: '' %>
           <%= f.text_field :name, class: 'form-control' %>

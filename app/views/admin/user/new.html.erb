@@ -3,6 +3,7 @@
 <div class="col-md-8 col-md-offset-2">
   <h3>新規ユーザー登録</h3>
   <%= form_for @user, url: admin_user_index_path do |f| %>
+      <%= render 'shared/error_message', object: f.object %>
       <%= render 'admin/user/form', f:f %>
       <%= f.submit '作成する', class: 'btn btn-primary' %>
   <% end %>

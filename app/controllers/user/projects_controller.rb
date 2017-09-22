@@ -23,7 +23,6 @@ class User::ProjectsController < ApplicationController
       redirect_to user_projects_path
     else
       # Error handling
-      flash.now[:danger] = 'Project was not created.'
       render :new
     end
   end
@@ -34,7 +33,7 @@ class User::ProjectsController < ApplicationController
       flash[:success] = 'Project was successfully updated.'
       redirect_to user_projects_path
     else
-      render 'edit'
+      render :edit
     end
   end
 
@@ -43,7 +42,7 @@ class User::ProjectsController < ApplicationController
     if @project.delete
       flash[:success] = 'Project was successfully deleted.'
     else
-      flash.now[:danger] = 'Project was not deleted.'
+      render :edit
     end
     redirect_to user_projects_path
   end
