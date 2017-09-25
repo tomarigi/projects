@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     @query = Project.search(params[:q])
-    @projects = @query.result.includes(:profile).where(is_published: true)
+    @projects = @query.result.includes(:profile).where(is_published: true).order('updated_at desc')
   end
 
   def show
