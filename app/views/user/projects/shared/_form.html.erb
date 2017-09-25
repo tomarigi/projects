@@ -21,7 +21,6 @@
         // DOM のレンダリングよりjsの読み込みの方が早いので100ms遅くする
         setInterval(function () {
             put_value();
-            renderImg();
             renderTitle();
         }, 100)
     });
@@ -31,8 +30,11 @@
 
     $(document).on('keyup', 'input, textarea', function() {
         put_value();
-        renderImg();
         renderTitle();
+    });
+
+    $('#project_main_image').on('change', function (e) {
+        renderImg(e);
     });
 
     function renderTitle() {
@@ -40,9 +42,19 @@
         $('#_project_title').text(val);
     }
 
-    function renderImg() {
-        var url = $('#project_main_image').val();
-        $('#_img_preview').attr('src', url)
+    function renderImg(e) {
+        e = e.originalEvent;
+        var target = e.dataTransfer || e.target;
+        var file = target && target.files && target.files[0];
+
+        var $preview = $('#_img_preview');
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $preview.empty();
+            $preview.attr('src', e.currentTarget.result)
+        };
+        reader.readAsDataURL(file);
     }
 
     function put_value() {
