@@ -37,6 +37,10 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'devise-i18n'
 
+# Image uploader
+gem 'carrierwave'
+gem 'rmagick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -5,6 +5,8 @@ class Project < ApplicationRecord
   validates :title, length: { minimum: 2, maxmum: 128 }
   validates :description, length: { minimum: 2 }
 
+  mount_uploader :main_image, ImageUploader
+
   def status
     self.is_published ? 'unlock-alt' : 'lock'
   end
@@ -14,7 +16,7 @@ class Project < ApplicationRecord
   end
 
   def image
-    self.main_image == "" ? 'default-thumbnail.jpg' : main_image
+    self.main_image.present? ? self.main_image : 'default-thumbnail.jpg'
   end
 
 end
