@@ -14,7 +14,7 @@ class Project < ApplicationRecord
   end
 
   def image
-    self.main_image == "" ? 'default-thumbnail.png' : main_image
+    self.main_image == "" ? 'default-thumbnail.jpg' : main_image
   end
 
 end
