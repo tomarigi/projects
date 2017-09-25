@@ -4,7 +4,7 @@
 </div>
 <div class="form-group">
   <!-- TODO: add file input -->
-  <%= f.label :main_image, 'メイン画像' %>
+  <%= f.label :main_image, 'メイン画像' %> <small>570px:390px推奨</small>
   <%= f.text_field :main_image, class: 'form-control' %>
 </div>
 <div class="form-group">
@@ -16,24 +16,38 @@
   <%= f.check_box :is_published, value: true %>
 </div>
 
-<script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
 <script type="text/javascript" charset="utf-8">
+    $(function () {
+        // DOM のレンダリングよりjsの読み込みの方が早いので100ms遅くする
+        setInterval(function () {
+            put_value();
+            renderImg();
+            renderTitle();
+        }, 100)
+    });
 
     var $textarea = $('#project_description');
     var converter = new (showdown.Converter);
 
-    $(function () {
-        put_value()
+    $(document).on('keyup', 'input, textarea', function() {
+        put_value();
+        renderImg();
+        renderTitle();
     });
 
-    $textarea.on('keyup', function () {
-        put_value();
-    });
-    
+    function renderTitle() {
+        var val = $('#project_title').val();
+        $('#_project_title').text(val);
+    }
+
+    function renderImg() {
+        var url = $('#project_main_image').val();
+        $('#_img_preview').attr('src', url)
+    }
+
     function put_value() {
         var val = $textarea.val();
         var html = converter.makeHtml(val);
-
         $('#markdown-preview').html(html);
     }
 </script>
