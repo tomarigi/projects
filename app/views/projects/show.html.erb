@@ -30,21 +30,24 @@
                     <strong>Tobitate:</strong>
                     <%= @profile.term %>
                   </p>
-
-                  <p>
-                    <strong>Organization:</strong>
-                    <!-- TODO: edit later -->
-                    brabrabra
-                  </p>
+                  <% if @project.organization %>
+                      <p>
+                        <strong>Organization:</strong>
+                        <!-- TODO: edit later -->
+                        <%= @project.organization %>
+                      </p>
+                  <% end %>
                   <p>
                     <strong>Established:</strong>
                     <!-- TODO: edit later -->
-                    2000/01/01
+                    <%= @project.established_at %>
                   </p>
-                  <p>
-                    <strong>Link:</strong>
-                    <%= link_to '公式サイト', @project.url, :target => '_blank' %>
-                  </p>
+                  <% if @project.url %>
+                      <p>
+                        <strong>Link:</strong>
+                        <%= link_to '公式サイト', @project.url, :target => '_blank' %>
+                      </p>
+                  <% end %>
 
                 </div>
               </div>

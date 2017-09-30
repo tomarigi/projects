@@ -17,6 +17,17 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="">組織名</label>
+      <p><%= @project.organization %></p>
+    </div>
+    <div class="form-group">
+      <label for="">設立日</label>
+      <p><%= @project.established_at %></p>
+    </div>
+    <div class="form-group">
+      <p><%= link_to '公式サイト', @project.url %></p>
+    </div>
+    <div class="form-group">
       <label for="">公開・非公開</label>
       <p>
         <%= @project.publish %>

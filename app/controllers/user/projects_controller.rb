@@ -54,7 +54,10 @@ class User::ProjectsController < ApplicationController
         :main_image,
         :main_image_cache,
         :description,
-        :is_published
+        :is_published,
+        :organization,
+        :url,
+        :established_at
     ])
   end
 
