@@ -14,6 +14,7 @@ class User::ProjectsController < ApplicationController
   end
 
   def edit
+    @project.main_image.cache! unless @project.main_image.blank?
   end
 
   def create
@@ -51,6 +52,7 @@ class User::ProjectsController < ApplicationController
     params.require(:project).permit([
         :title,
         :main_image,
+        :main_image_cache,
         :description,
         :is_published
     ])
