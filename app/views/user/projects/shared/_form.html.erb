@@ -40,6 +40,8 @@
         $('#project_established_at').datepicker({
             dateFormat: 'yy-mm-dd'
         });
+
+        autosize($('#project_description'))
     });
 
     var $textarea = $('#project_description');

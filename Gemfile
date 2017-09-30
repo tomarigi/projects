@@ -38,6 +38,8 @@ gem 'jquery-ui-rails'
 gem 'devise'
 gem 'devise-i18n'
 
+gem 'autosize'
+
 # Image uploader
 gem 'carrierwave'
 gem 'rmagick'
