@@ -74,5 +74,9 @@ img {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    padding-top: 10px;
+    h3 {
+      text-align: left !important;
+    }
   }
 }
