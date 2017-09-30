@@ -12,9 +12,13 @@ class Admin::UserController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
+      "user : #{@user.email} and #{@user.profile.name}"
+      flash[:success] = 'User was successfully created.'
       redirect_to admin_user_index_path
+    else
+      render :new
     end
   end
 

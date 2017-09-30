@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     # redirect user edit path if user visit first time, to change password.
-    current_user.sign_in_count < 2 ? edit_user_profile_path(current_user) : root_path
+    current_user.sign_in_count < 2 ? user_profile_edit_path : user_projects_path
   end
 
   def after_login
@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       # Check record exist
       if current_user.sign_in_count < 2 && current_user.profile.nil?
-        current_user.profile = Profile.create(name: "トビタテ太郎")
+        current_user.profile = Profile.create(name: 'トビタテ太郎')
       end
     end
   end

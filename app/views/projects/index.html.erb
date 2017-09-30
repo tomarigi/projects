@@ -5,42 +5,41 @@
         <div class="col-md-12">
           <h4>トビタテプロジェクト一覧</h4>
           <p><a href="//www.tobitate.mext.go.jp/">トビタテ留学JAPAN日本代表プログラム</a>に参加した人が携わるプロジェクト一覧です。</p>
-          <form action="/" method="get">
-            <div class="col-md-10">
-              <input type="text" name="q" value="<%= @query %>" class="form-control" placeholder="好きな文字で検索...">
-            </div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-primary">検索！</button>
-            </div>
-          </form>
+          <%= search_form_for @query do |f| %>
+              <div class="col-md-10">
+                <%= f.search_field :title_or_description_cont, placeholder: '好きな文字で検索...', class: 'form-control pull-left' %>
+              </div>
+              <div class="col-md-2">
+                <%= f.submit '検索！', class: 'btn btn-primary pull-left' %>
+              </div>
+          <% end %>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-
           <% if @query && @query != "" %>
-          <p>検索結果: <%= @projects.length %>件</p>
+              <p>検索結果: <%= @projects.length %>件</p>
           <% end %>
 
           <% if @projects %>
-            <% @projects.each do |project| %>
+              <% @projects.each do |project| %>
                   <div class="project col-md-6 col-sm-12">
                     <div class="project_wrapper">
-                      <h3><%= project["title"] %></h3>
+                      <h3 class="_title"><%= project.title %></h3>
                       <div class="screen">
-                        <%= image_tag(project["img"], class: 'img-responsive') %>
+                        <%= image_tag(project.image, class: 'img-responsive') %>
                       </div>
-                      <p class="description">
-                        <%= project["content"] %>
-                      </p>
+                      <div class="description">
+                        <%= markdown(project.description) %>
+                      </div>
                     </div>
 
                     <div class="divider"></div>
                     <div class="visit">
-                      <%= link_to 'このプロジェクトをもっと見る', project_path(project["id"]), :class => 'button' %>
+                      <%= link_to 'このプロジェクトをもっと見る', project_path(project.id), :class => 'button' %>
                     </div>
                   </div>
-            <% end %>
+              <% end %>
           <% end %>
 
         </div>

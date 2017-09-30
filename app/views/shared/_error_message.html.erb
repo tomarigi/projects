@@ -1,5 +1,12 @@
-<% flash.each do |key, value| %>
-    <div class="flash-message <%= key %>">
-      <%= value %>
+<% if object.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        このフォームにエラーがあります。 <%= pluralize(object.errors.count, "エラー") %>.
+      </div>
+      <ul>
+        <% object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
 <% end %>

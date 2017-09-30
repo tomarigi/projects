@@ -1,0 +1,41 @@
+
+<div class="col-md-8 col-md-offset-2" id="projects">
+  <%= link_to '←戻る', user_projects_path %>
+  <div class="_project">
+    <div class="form-group">
+      <label for="">タイトル</label>
+      <h4><%= @project.title %></h4>
+    </div>
+    <div class="form-group">
+      <label for="">メイン画像</label>
+      <img src="<%= @project.main_image %>" alt="">
+    </div>
+    <div class="form-group">
+      <label for="">紹介文</label>
+      <div>
+        <%= markdown(@project.description) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">組織名</label>
+      <p><%= @project.organization %></p>
+    </div>
+    <div class="form-group">
+      <label for="">設立日</label>
+      <p><%= @project.established_at %></p>
+    </div>
+    <div class="form-group">
+      <p><%= link_to '公式サイト', @project.url %></p>
+    </div>
+    <div class="form-group">
+      <label for="">公開・非公開</label>
+      <p>
+        <%= @project.publish %>
+      </p>
+    </div>
+  </div>
+
+  <div class="_menu">
+    <%= link_to '編集', edit_user_project_path(@project), class: 'btn btn-info' %>
+  </div>
+</div>

@@ -29,16 +29,29 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'sitemap_generator'
-
+gem 'font-awesome-sass'
 gem 'rails-i18n'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'devise'
 gem 'devise-i18n'
 
+gem 'autosize'
+
+# Image uploader
+gem 'carrierwave'
+gem 'rmagick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# markdown
+gem 'redcarpet'
+
+# Search gem
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

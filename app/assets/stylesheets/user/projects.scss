@@ -1,0 +1,33 @@
+// Place all the styles related to the user/projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#projects {
+  margin-top: 30px;
+  #project_list {
+    border: 1px solid #EDEDED;
+    padding: 15px;
+    li {
+      border-bottom: 1px solid #EDEDED;
+      padding: 20px 15px;
+      & > a {
+        color: #222;
+      }
+      ._action {
+        float: right;
+      }
+    }
+  }
+  #_dangerous_area {
+    margin-top: 20px;
+    padding: 20px 25px;
+    border: 1px solid #910000;
+    vertical-align: middle;
+    position: relative;
+    a {
+      top: -5px;
+      position: relative;
+      float: right;
+    }
+  }
+}

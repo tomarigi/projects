@@ -3,7 +3,7 @@
     <h3>プロフィールの編集</h3>
 
     <%= form_for @profile, url: user_profile_path(current_user) do |f| %>
-
+        <%= render 'shared/error_message', object: f.object %>
         <div class="form-group">
           <%= f.label :name, '名前', class: '' %>
           <%= f.text_field :name, class: 'form-control' %>
@@ -11,7 +11,7 @@
 
         <div class="form-group">
           <%= f.label :term, 'トビタテ' %>
-          <%= f.select :term, %w(1 2 3 4 5 6 7 8 9 10 11 12), include_blank: false, class: 'form-control' %>期
+          <%= f.select :term, %w(1 2 3 4 5 6 7 8 9 10 11 12 13), include_blank: false, class: 'form-control' %>期
         </div>
 
         <%= link_to 'キャンセル', user_profile_index_path, class: 'btn btn-default' %>
