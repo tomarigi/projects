@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.date :established_at
       t.boolean :is_published, default: false
       t.string :url
+      t.string :organization
 
       t.timestamps
     end
