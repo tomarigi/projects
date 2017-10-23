@@ -1,5 +1,5 @@
 <div class="col-md-8 col-md-offset-2" id="profile">
-  <div class="card">
+  <div class="card p-15">
     <h3>プロフィール</h3>
     <div class="form-group">
       <label for="">名前: </label>
@@ -18,5 +18,11 @@
       <div class="form-control bottom"><%= @profile.updated_at.strftime('%Y年%m月%d日 %H:%M:%S') %></div>
     </div>
   </div>
-  <%= link_to '編集', user_profile_edit_path, class: 'btn btn-default' %>
+  <div class="col-md-12 text-left _btn_option">
+    <span>名前と期の変更</span><%= link_to '編集', user_profile_edit_path, class: 'btn btn-default pull-right' %>
+  </div>
+  <div class="col-md-12 text-left _btn_option">
+    <span>メールアドレスやパスワードの変更</span><%= link_to '高度な編集', edit_user_registration_path, class: 'btn btn-default pull-right' %>
+  </div>
+
 </div>
