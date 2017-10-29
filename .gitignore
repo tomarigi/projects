@@ -24,3 +24,5 @@
 
 .idea
 public/uploads
+
+config/secrets.yml
