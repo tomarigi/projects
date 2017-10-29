@@ -44,6 +44,9 @@ gem 'autosize'
 gem 'carrierwave'
 gem 'rmagick'
 
+# Image upload to S3 on AWS
+gem 'fog'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
