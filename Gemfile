@@ -56,6 +56,9 @@ gem 'redcarpet'
 # Search gem
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
+# admin
+gem 'rails_admin', '~> 1.2'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
