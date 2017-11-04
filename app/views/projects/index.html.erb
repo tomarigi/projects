@@ -30,7 +30,7 @@
                         <%= image_tag(project.image, class: 'img-responsive') %>
                       </div>
                       <div class="description">
-                        <%= markdown(project.description) %>
+                        <%= auto_link(markdown(project.description), :html => { :target => '_blank' }) %>
                       </div>
                     </div>
 

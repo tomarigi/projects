@@ -8,6 +8,7 @@ class User::ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @default_value = defalut_value
   end
 
   def show
@@ -15,6 +16,7 @@ class User::ProjectsController < ApplicationController
 
   def edit
     @project.main_image.cache! unless @project.main_image.blank?
+    @default_value = @project.description
   end
 
   def create
@@ -59,6 +61,32 @@ class User::ProjectsController < ApplicationController
         :url,
         :established_at
     ])
+  end
+
+  def defalut_value
+    value = <<-EOS
+
+ここにプロジェクトの概要を記入してください  
+
+マークダウン式の記述方法です。  
+改行は半角スペース2つです。  
+
+[リンクの入れ方は](https://google.com)この通り  
+**これで太文字の記入**  
+*斜文字*
+# タイトル1
+## タイトル2
+### タイトル3
+#### タイトル4
+##### タイトル5
+![画像の入れ方](http://www.mext.go.jp/a_menu/kokusai/tobitate/__icsFiles/artimage/2014/04/21/c_edu08_04/Ryugaku-JAPAN_Logojpg.jpg)
+
+--  
+#### 最近の活動
+2020/11/11 イベントを行います！    
+
+    EOS
+    value
   end
 
   def set_project

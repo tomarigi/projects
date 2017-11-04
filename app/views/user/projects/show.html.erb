@@ -8,12 +8,12 @@
     </div>
     <div class="form-group">
       <label for="">メイン画像</label>
-      <img src="<%= @project.main_image %>" alt="">
+      <%= image_tag(@project.image, :class => 'img-responsive') %>
     </div>
     <div class="form-group">
       <label for="">紹介文</label>
       <div>
-        <%= markdown(@project.description) %>
+        <%= auto_link(markdown(@project.description), :html => { :target => '_blank' }) %>
       </div>
     </div>
     <div class="form-group">
