@@ -16,6 +16,7 @@ class User::ProjectsController < ApplicationController
 
   def edit
     @project.main_image.cache! unless @project.main_image.blank?
+    @default_value = @project.description
   end
 
   def create
