@@ -1,4 +1,4 @@
-<div id="portfolio">
+<div id="portfolio" style="display: none;">
   <div id="showcase">
     <div class="container">
       <div class="row header">
@@ -44,6 +44,60 @@
 
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center display-3 text-primary">Article title</h1>
+        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-5 text-white  text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= search_form_for @query, html: { class: 'form-inline justify-content-center' } do |f| %>
+            <div class="input-group my-1 col-md-6 col-sm-4">
+              <%= f.search_field :title_or_description_cont, placeholder: '好きな文字で検索...', id: 'inlineFormInputGroup', class: 'form-control mr-3 my-1' %>
+            </div>
+            <%= f.submit '検索！', class: 'btn btn-secondary' %>
+        <% end %>
+        <p class="text-primary">Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Paragrap, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-5 bg-light text-dark">
+  <div class="container">
+    <div class="row">
+      <% if @query && @query != "" %>
+          <p>検索結果: <%= @projects.length %>件</p>
+      <% end %>
+    </div>
+    <div class="row">
+
+      <% if @projects %>
+          <% @projects.each do |project| %>
+            <div class="col-md-3 my-3">
+              <%= link_to (project), class: 'text-dark _unstyled' do  %>
+                <%= image_tag(project.image, class: 'img-fluid d-block mb-4') %>
+                <h5><b><%= project.title %></b></h5>
+                <div class="_description">
+                  <%= auto_link(markdown(project.description).truncate(100, omission: '...'), :html => { :target => '_blank' }) %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+      <% end %>
+
     </div>
   </div>
 </div>

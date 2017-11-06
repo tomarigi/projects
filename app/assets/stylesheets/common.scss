@@ -24,6 +24,10 @@ img {
   margin-bottom: 10px;
 }
 
+._unstyled, ._unstyled:hover {
+  text-decoration: none;
+}
+
 #signup {
   background: #ffffff;
   .wrapper {
