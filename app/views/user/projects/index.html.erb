@@ -1,10 +1,10 @@
 
-<div class="col-md-8 col-md-offset-2" id="projects">
+<div class="col-md-8 offset-md-2" id="projects">
 
   <h4>プロジェクト一覧</h4>
   <small>登録したプロジェクト一覧が表示されます。</small>
   <div class="m-t-10">
-    <%= link_to '新規作成', new_user_project_path, class: 'btn btn-default' %>
+    <%= link_to '新規作成', new_user_project_path, class: 'btn btn-light' %>
     <div id="project_list">
       <% if @projects.present? %>
           <ul>

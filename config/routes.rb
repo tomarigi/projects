@@ -32,5 +32,5 @@ Rails.application.routes.draw do
   # Open Project
   resources :projects, only: [:index, :show]
 
-  root 'projects#index'
+  root 'static_page#index'
 end

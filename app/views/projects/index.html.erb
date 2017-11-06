@@ -1,49 +1,54 @@
-<div id="portfolio">
-  <div id="showcase">
-    <div class="container">
-      <div class="row header">
-        <div class="col-md-12">
-          <h4>トビタテプロジェクト一覧</h4>
-          <p><a href="//www.tobitate.mext.go.jp/">トビタテ留学JAPAN日本代表プログラム</a>に参加した人が携わるプロジェクト一覧です。</p>
-          <%= search_form_for @query do |f| %>
-              <div class="col-md-10">
-                <%= f.search_field :title_or_description_cont, placeholder: '好きな文字で検索...', class: 'form-control pull-left' %>
-              </div>
-              <div class="col-md-2">
-                <%= f.submit '検索！', class: 'btn btn-primary pull-left' %>
-              </div>
-          <% end %>
-        </div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center display-3 text-primary">ポートフォリオ</h1>
+        <p class="text-center">
+          トビタテ生による、プロジェクト一覧です。気になるキーワードで検索してみましょう。<br>
+          ひょっとしたらあなたにぴったりなプロジェクトが見つかるかもしれません。
+        </p>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <% if @query && @query != "" %>
-              <p>検索結果: <%= @projects.length %>件</p>
-          <% end %>
+    </div>
+  </div>
+</div>
+<div class="text-white  text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= search_form_for @query, html: { class: 'form-inline justify-content-center' } do |f| %>
+            <div class="input-group my-1 col-md-6 col-sm-4">
+              <%= f.search_field :title_or_description_cont, placeholder: '好きな文字で検索...', id: 'inlineFormInputGroup', class: 'form-control mr-3 my-1' %>
+            </div>
+            <%= f.submit '検索！', class: 'btn btn-secondary' %>
+        <% end %>
+        <p class="text-primary" style="display: none;">検索ワード, 検索ワード, 検索ワード, 検索ワード, 検索ワード</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-5 bg-light text-dark">
+  <div class="container">
+    <div class="row">
+      <% if @query && @query != "" %>
+          <p>検索結果: <%= @projects.length %>件</p>
+      <% end %>
+    </div>
+    <div class="row">
 
-          <% if @projects %>
-              <% @projects.each do |project| %>
-                  <div class="project col-md-6 col-sm-12">
-                    <div class="project_wrapper">
-                      <h3 class="_title"><%= project.title %></h3>
-                      <div class="screen">
-                        <%= image_tag(project.image, class: 'img-responsive') %>
-                      </div>
-                      <div class="description">
-                        <%= auto_link(markdown(project.description), :html => { :target => '_blank' }) %>
-                      </div>
-                    </div>
-
-                    <div class="divider"></div>
-                    <div class="visit">
-                      <%= link_to 'このプロジェクトをもっと見る', project_path(project.id), :class => 'button' %>
-                    </div>
-                  </div>
+      <% if @projects %>
+          <% @projects.each do |project| %>
+            <div class="col-md-3 my-3">
+              <%= link_to (project), class: 'text-dark _unstyled' do  %>
+                <%= image_tag(project.image, class: 'img-fluid d-block mb-4') %>
+                <h5><b><%= project.title %></b></h5>
+                <div class="_description">
+                  <%= auto_link(markdown(project.description).truncate(100, omission: '...'), :html => { :target => '_blank' }) %>
+                </div>
               <% end %>
+            </div>
           <% end %>
+      <% end %>
 
-        </div>
-      </div>
     </div>
   </div>
 </div>
