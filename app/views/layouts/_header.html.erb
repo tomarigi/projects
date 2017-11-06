@@ -6,11 +6,11 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><%= link_to 'プロジェクト一覧', projects_path, :class => 'nav-link' %></li>
       </ul>
-      <form class="form-inline m-0" action="<%= projects_path %>" method="get">
+      <form class="form-inline mx-3" action="<%= projects_path %>" method="get">
         <input type="hidden" name="utf8" value="✓">
         <input type="hidden" name="commit" value="検索！">
-        <input class="form-control mr-2" type="text" name="q[title_or_description_cont]" placeholder="Search">
-        <button class="btn btn-primary" type="submit">Search</button>
+        <input class="form-control mr-2" type="text" name="q[title_or_description_cont]" placeholder="好きな文字で検索...">
+        <button class="btn btn-primary" type="submit">検索</button>
       </form>
       <% if user_signed_in? %>
       <div class="dropdown show">
