@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/
+/* http://meyerweb.com/eric/tools/css/reset
 v2.0 | 20110126
 License: none (public domain)
 */
@@ -12,6 +12,7 @@ article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
   display: block;
 }
+
 ol, ul {
   list-style: none;
   padding: 0;
@@ -19,6 +20,21 @@ ol, ul {
 
 img {
   max-width: 100%;
+}
+
+#_header_image {
+  background: rgba( 0, 0, 0, 0.55 ) image-url("bgi.png") no-repeat center;
+  h3, p {
+    //background-color: rgba( 0, 0, 0, 0.55 );
+  }
+}
+
+.bgm-base {
+  background-color: #004EA3;
+}
+
+.p-15 {
+  padding: 15px;
 }
 
 .m-t-10 {
@@ -31,4 +47,15 @@ img {
 
 ._unstyled, ._unstyled:hover {
   text-decoration: none;
+}
+
+._btn_option span {
+  display: inline-block;
+  padding: 10px 0px;
+}
+
+.alert-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
 }
