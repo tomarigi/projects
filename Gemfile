@@ -28,7 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# sitemap
 gem 'sitemap_generator'
+gem 'roboto'
+
 gem 'font-awesome-sass'
 gem 'rails-i18n'
 

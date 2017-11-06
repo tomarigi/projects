@@ -26,3 +26,5 @@
 public/uploads
 
 config/secrets.yml
+
+public/sitemap.xml.gz
