@@ -1,40 +1,26 @@
-
-<div id="signup">
+<div class="py-5">
   <div class="container">
-    <div class="row header">
-      <div class="col-md-12">
-        <h3 class="logo">
-          <%= link_to 'TOMARIGI', root_path %>
-        </h3>
-        <h4>パスワードを忘れましたか？</h4>
-      </div>
-    </div>
     <div class="row">
-      <div class="col-md-12">
-        <div class="wrapper clearfix">
-          <div class="formy">
-            <div class="row">
-              <div class="col-md-12">
-                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-                    <%= devise_error_messages! %>
+      <div class="col-md-3"> </div>
+      <div class="col-md-6">
+        <div class="card text-white p-5 bg-primary">
+          <div class="card-body">
+            <h1 class="mb-4">Login form</h1>
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                <%= devise_error_messages! %>
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+                </div>
+                <%= f.submit '送信', class: 'btn btn-secondary' %>
+            <% end %>
 
-                    <div class="field">
-                      <%= f.label :email %><br />
-                      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-                    </div>
-
-                    <div class="submit">
-                      <button type="submit" class="button-clear">
-                        <span>送信</span>
-                      </button>
-                    </div>
-                <% end %>
-              </div>
+          </div>
+          <div class="card-footer">
+            <div class="already-account">
+              <%= render "devise/shared/links" %>
             </div>
           </div>
-        </div>
-        <div class="already-account">
-          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>
