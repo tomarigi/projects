@@ -4,21 +4,31 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-        <li class="nav-item"><%= link_to 'プロジェクト', user_projects_path, :class => 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'プロフィール', user_profile_index_path, :class => 'nav-link' %></li>
-            <% if current_user.admin? %>
-                <li class="nav-item"><%= link_to 'ユーザー管理', admin_user_index_path, :class => 'nav-link' %></li>
-            <% end %>
-        <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => 'nav-link' %></li>
-        <% else %>
-        <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, :class => 'nav-link text-white' %></li>
-        <% end %>
+        <li class="nav-item"><%= link_to 'プロジェクト一覧', projects_path, :class => 'nav-link' %></li>
       </ul>
       <form class="form-inline m-0">
         <input class="form-control mr-2" type="text" placeholder="Search">
         <button class="btn btn-primary" type="submit">Search</button>
       </form>
+      <% if user_signed_in? %>
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          メニュー
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <%= link_to 'プロジェクト', user_projects_path, :class => 'dropdown-item' %>
+          <%= link_to 'プロフィール', user_profile_index_path, :class => 'dropdown-item' %>
+          <div class="dropdown-divider"></div>
+          <% if current_user.admin? %>
+              <%= link_to 'ユーザー管理', admin_user_index_path, :class => 'dropdown-item' %>
+          <% end %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => 'dropdown-item' %>
+        </div>
+      </div>
+      <% else %>
+          <%= link_to 'ログイン', new_user_session_path, :class => 'nav-link text-white' %>
+      <% end %>
     </div>
   </div>
 </nav>
