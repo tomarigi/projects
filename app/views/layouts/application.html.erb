@@ -15,10 +15,8 @@
 
   <body>
   <%= render 'layouts/header' %>
-  <div class="container">
-    <%= render 'shared/flash' %>
-    <%= yield %>
-  </div>
+  <%= render 'shared/flash' %>
+  <%= yield %>
   <%= render 'layouts/footer' %>
   </body>
 </html>
