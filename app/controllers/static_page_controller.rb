@@ -1,5 +1,5 @@
 class StaticPageController < ApplicationController
   def index
-    @projects = Project.order('RANDOM()').limit(4)
+    @projects = Project.where(is_published: true).order('RANDOM()').limit(4)
   end
 end
