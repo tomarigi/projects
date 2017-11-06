@@ -30,7 +30,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 4.0.0.beta2'
 
+# sitemap
 gem 'sitemap_generator'
+gem 'roboto'
+
 gem 'font-awesome-sass'
 gem 'rails-i18n'
 
