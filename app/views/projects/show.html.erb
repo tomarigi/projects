@@ -19,10 +19,12 @@
               <%= @project.organization %>
             </p>
         <% end %>
-        <p>
-          <strong>設立日:</strong>
-          <%= @project.established_at.strftime('%Y年%m月%d日') %>
-        </p>
+        <% if @project.established_at %>
+            <p>
+              <strong>設立日:</strong>
+              <%= @project.established_at.strftime('%Y年%m月%d日') %>
+            </p>
+        <% end %>
         <% if @project.url %>
             <p>
               <strong>リンク:</strong>
