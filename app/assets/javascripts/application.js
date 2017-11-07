@@ -16,5 +16,7 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui/datepicker-ja
+//= require popper
+//= require bootstrap
 //= require autosize
 //= require_tree .

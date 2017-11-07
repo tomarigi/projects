@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount_roboto
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   namespace :admin do
     resources :user, only: [:new, :create, :index]
@@ -31,5 +32,5 @@ Rails.application.routes.draw do
   # Open Project
   resources :projects, only: [:index, :show]
 
-  root 'projects#index'
+  root 'static_page#index'
 end

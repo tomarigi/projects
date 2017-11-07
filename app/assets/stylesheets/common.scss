@@ -1,12 +1,18 @@
-/* http://meyerweb.com/eric/tools/css/reset/
+/* http://meyerweb.com/eric/tools/css/reset
 v2.0 | 20110126
 License: none (public domain)
 */
 /* HTML5 display-role reset for older browsers */
+
+body {
+  font-family: 'Noto Sans Japanese' !important;
+}
+
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
   display: block;
 }
+
 ol, ul {
   list-style: none;
   padding: 0;
@@ -14,6 +20,25 @@ ol, ul {
 
 img {
   max-width: 100%;
+}
+
+#_header_image {
+  background: rgba( 0, 0, 0, 0.55 ) image-url("bgi.png") no-repeat center;
+  h3, p {
+    //background-color: rgba( 0, 0, 0, 0.55 );
+  }
+}
+
+#ui-datepicker-div {
+  background-color: #fff;
+}
+
+.bgm-base {
+  background-color: #004EA3;
+}
+
+.p-15 {
+  padding: 15px;
 }
 
 .m-t-10 {
@@ -24,18 +49,8 @@ img {
   margin-bottom: 10px;
 }
 
-#signup {
-  background: #ffffff;
-  .wrapper {
-    border: 2px solid #EDEDED;
-  }
-  a, h4 {
-    color: #222 !important;
-  }
-}
-
-.p-15 {
-  padding: 15px;
+._unstyled, ._unstyled:hover {
+  text-decoration: none;
 }
 
 ._btn_option span {
@@ -47,48 +62,4 @@ img {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
-}
-
-#signup {
-  background: none !important;
-}
-
-#projects {
-  ._project {
-    margin-top: 20px;
-    border: 1px solid #EDEDED;
-    padding: 15px;
-    .form-group {
-      margin-top: 30px;
-    }
-  }
-  ._link {
-    margin-left: 10px;
-  }
-  #markdown-preview {
-    border: 1px solid #EDEDED;
-    padding: 10px 15px;
-  }
-}
-
-
-#portfolio {
-  ._title {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .screen {
-    height: 200px;
-  }
-  .description {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-top: 10px;
-    h3 {
-      text-align: left !important;
-    }
-  }
 }

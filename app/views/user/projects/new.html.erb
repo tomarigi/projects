@@ -1,16 +1,18 @@
 
 
-<div class="col-md-12" id="projects">
-  <div class="row">
-    <div class="col-md-6">
-      <%= form_for @project, url: user_projects_path do |f| %>
-          <%= render 'shared/error_message', object: f.object %>
-          <%= render 'user/projects/shared/form', f:f %>
-          <%= f.submit '作成', class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-    <div class="col-md-6">
-      <%= render 'user/projects/shared/preview' %>
+<div class="container my-4">
+  <div class="col-md-12" id="projects">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form_for @project, url: user_projects_path do |f| %>
+            <%= render 'shared/error_message', object: f.object %>
+            <%= render 'user/projects/shared/form', f:f %>
+            <%= f.submit '作成', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <%= render 'user/projects/shared/preview' %>
+      </div>
     </div>
   </div>
 </div>

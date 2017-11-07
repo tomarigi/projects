@@ -1,7 +1,7 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "ログイン", new_session_path(resource_name) %><br />
+  <%= link_to "ログイン", new_session_path(resource_name), :class => 'text-white' %><br />
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "パスワードを忘れましたか？", new_password_path(resource_name) %><br />
+  <%= link_to "パスワードを忘れましたか？", new_password_path(resource_name), :class => 'text-white' %><br />
 <% end -%>

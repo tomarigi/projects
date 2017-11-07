@@ -1,86 +1,64 @@
-<div id="portfolio-item">
-  <div id="st-container">
-    <div id="showcase">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="project">
-              <h1>
-                <%= @project.title %>
-              </h1>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <%= image_tag(@project.image, :class => 'img-fluid d-block mb-4 w-100 img-thumbnail') %>
+        <p>
+          <strong>代表者:</strong>
+          <%= @profile.name %>
+        </p>
 
-              <div class="col-md-7 screens">
+        <p>
+          <strong>トビタテ:</strong>
+          <%= @profile.term %>
+          期生
+        </p>
+        <% if @project.organization %>
+            <p>
+              <strong>組織名:</strong>
+              <%= @project.organization %>
+            </p>
+        <% end %>
+        <% if @project.established_at %>
+            <p>
+              <strong>設立日:</strong>
+              <%= @project.established_at.strftime('%Y年%m月%d日') %>
+            </p>
+        <% end %>
+        <% if @project.url %>
+            <p>
+              <strong>リンク:</strong>
+              <%= link_to '公式サイト', @project.url, :target => '_blank' %>
+            </p>
+        <% end %>
+      </div>
 
-                <%= image_tag(@project.image, :class => 'img-responsive') %>
-
-                <p class="text">
-                  <%= auto_link(markdown(@project.description), :html => { :target => '_blank' }) %>
-                </p>
-
-              </div>
-              <div class="col-md-4 col-md-offset-1 description">
-                <div class="info">
-
-                  <p>
-                    <strong>Person:</strong>
-                    <%= @profile.name %>
-                  </p>
-
-                  <p>
-                    <strong>Tobitate:</strong>
-                    <%= @profile.term %>
-                  </p>
-                  <% if @project.organization %>
-                      <p>
-                        <strong>Organization:</strong>
-                        <%= @project.organization %>
-                      </p>
-                  <% end %>
-                  <p>
-                    <strong>Established:</strong>
-                    <%= @project.established_at %>
-                  </p>
-                  <% if @project.url %>
-                      <p>
-                        <strong>Link:</strong>
-                        <%= link_to '公式サイト', @project.url, :target => '_blank' %>
-                      </p>
-                  <% end %>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-7">
+        <h2 class="text-primary pt-3"><%= @project.title %></h2>
+        <p class="">
+          <%= auto_link(markdown(@project.description), :html => { :target => '_blank' }) %>
+        </p>
       </div>
     </div>
   </div>
 </div>
 
-<script type="text/javascript">
-    $(function () {
-        // Makes the description section to be fixed after scrolling down the page
-        var $info = $(".project .info");
-        var infoOffset = $info.offset().top - 35;
-        var infoWidth = $info.width();
-        $(document).scroll(function () {
-            var bodyOffset = $("body").scrollTop();
-            if (bodyOffset >= infoOffset) {
-                $info.addClass("stick");
-                $info.css("width", infoWidth);
-            } else {
-                $info.removeClass("stick");
-                $info.removeAttr("style");
-            }
-        });
-
-        // Triggers the off-canvas panel
-        $("#trigger").click(function (e) {
-            e.stopPropagation();
-            $(".st-container").toggleClass("nav-effect");
-        });
-        $(".st-pusher").click(function () {
-            $(".st-container").removeClass("nav-effect");
-        });
-    });
-</script>
+<div class="py-5 bg-primary text-white" style="display: none;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>問い合わせ</h1>
+        <p>要件のある方は代表者に連絡しましょう</p>
+        <form>
+          <div class="form-group"> <label for="InputName">お名前</label>
+            <input type="text" class="form-control" id="InputName" placeholder="Your name"> </div>
+          <div class="form-group"> <label for="InputEmail1">メールアドレス</label>
+            <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email"> </div>
+          <div class="form-group"> <label for="Textarea">問い合わせ内容</label>
+            <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here"></textarea> </div>
+          <button type="submit" class="btn btn-secondary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

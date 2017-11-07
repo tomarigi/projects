@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  layout 'user/application'
+  layout 'application'
   # saves the location before loading each page so we can return to the
   # right page. If we're on a devise page, we don't want to store that as the
   # place to return to (for example, we don't want to return to the sign in page

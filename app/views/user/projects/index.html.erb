@@ -1,20 +1,23 @@
 
-<div class="col-md-8 col-md-offset-2" id="projects">
+<div class="col-md-8 offset-md-2" id="projects">
 
   <h4>プロジェクト一覧</h4>
   <small>登録したプロジェクト一覧が表示されます。</small>
   <div class="m-t-10">
-    <%= link_to '新規作成', new_user_project_path, class: 'btn btn-default' %>
+    <%= link_to '新規作成', new_user_project_path, class: 'btn btn-light' %>
     <div id="project_list">
       <% if @projects.present? %>
           <ul>
             <% @projects.each do |project| %>
-                <li>
-                  <i class="fa fa-<%= project.status %>" aria-hidden="true"></i>
-                  <%= link_to project.title, user_project_path(project) %>
-                  <span class="_action">
-                    <%= link_to '詳細', user_project_path(project), class: '_link' %>
-                    <%= link_to '編集', edit_user_project_path(project), class: '_link' %>
+                <li class="row justify-content-between">
+                  <span class="col-3 pt-2">
+                    <i class="fa fa-<%= project.status %>" aria-hidden="true"></i>
+                    <%= link_to project.title, user_project_path(project), class: 'text-dark' %>
+                  </span>
+
+                  <span class="col-3">
+                    <%= link_to '詳細', user_project_path(project), class: 'btn btn-light' %>
+                    <%= link_to '編集', edit_user_project_path(project), class: 'btn btn-light' %>
                   </span>
                 </li>
             <% end %>

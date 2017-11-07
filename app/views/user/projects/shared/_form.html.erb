@@ -44,7 +44,7 @@
     });
 
     var $textarea = $('#project_description');
-    var converter = new (showdown.Converter);
+    var converter = new showdown.Converter();
 
     $(document).on('keyup', 'input, textarea', function() {
         put_value();
