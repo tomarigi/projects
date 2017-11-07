@@ -81,7 +81,7 @@ class User::ProjectsController < ApplicationController
 ##### タイトル5
 ![画像の入れ方](http://www.mext.go.jp/a_menu/kokusai/tobitate/__icsFiles/artimage/2014/04/21/c_edu08_04/Ryugaku-JAPAN_Logojpg.jpg)
 
---  
+---  
 #### 最近の活動
 2020/11/11 イベントを行います！    
 
