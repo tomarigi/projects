@@ -16,8 +16,9 @@
         <div class="row">
           <% if @projects %>
               <% @projects.each do |project| %>
-                <div class="col-md-3">
+                <div class="col-md-3 my-5">
                   <%= image_tag(project.image, class: 'img-fluid d-block w-100 mb-3 rounded') %>
+                  <h5 class="text-center"><%= project.title %></h5>
                   <div class="_description">
                     <%= auto_link(markdown(project.description).truncate(100, omission: '...'), :html => { :target => '_blank' }) %>
                   </div>
