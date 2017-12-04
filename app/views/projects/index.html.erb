@@ -39,7 +39,7 @@
           <% @projects.each do |project| %>
             <div class="col-md-3 my-3">
               <%= link_to (project), class: 'text-dark _unstyled' do  %>
-                <%= image_tag(project.image, class: 'img-fluid d-block mb-4', onerror: 'this.error=null;this.src="default-thumbnail.jpg"') %>
+                <%= image_tag(project.main_image, class: 'img-fluid d-block mb-4', onerror: 'this.error=null;this.src="default-thumbnail.jpg"') %>
                 <h5><b><%= project.title %></b></h5>
                 <div class="_description">
                   <%= auto_link(markdown(project.description).truncate(100, omission: '...'), :html => { :target => '_blank' }) %>
