@@ -15,5 +15,9 @@ module TomarigiProject
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :ja
+    # db timezone setting
+    config.active_record.default_timezone = :local
+    # change time zone to show
+    config.time_zone = 'Tokyo'
   end
 end
