@@ -3,16 +3,18 @@
     <div class="row">
       <div class="col-md-5">
         <%= image_tag(@project.main_image, :class => 'img-fluid d-block mb-4 w-100 img-thumbnail') %>
-        <p>
-          <strong>代表者:</strong>
-          <%= @profile.name %>
-        </p>
+        <% if @profile %>
+          <p>
+            <strong>代表者:</strong>
+            <%= @profile.name %>
+          </p>
 
-        <p>
-          <strong>トビタテ:</strong>
-          <%= @profile.term %>
-          期生
-        </p>
+          <p>
+            <strong>トビタテ:</strong>
+            <%= @profile.term %>
+            期生
+          </p>
+        <% end %>
         <% if @project.organization %>
             <p>
               <strong>組織名:</strong>
