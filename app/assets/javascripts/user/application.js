@@ -14,4 +14,3 @@
 //= require jquery-ui/datepicker-ja
 //= require autosize
 //= require user/showdown
-//= require user/projects
