@@ -1,0 +1,13 @@
+defaults: &defaults
+  site:
+    description: 'トビタテ生が主体的に関わるプロジェクトの可視化を行なっています'
+    title: 'Tomarigi Portfolio'
+    url: 'http://projects.tobitate-tomarigi.org/'
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

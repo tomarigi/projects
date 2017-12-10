@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def full_title(page_title)
-    base_title = 'Tomarigi Portfolio'
+    base_title = Settings.site.title
     if page_title.empty?
       base_title
     else
@@ -15,7 +15,7 @@ module ApplicationHelper
   end
 
   def full_description(description)
-    base_description = 'トビタテ生が主体的に関わるプロジェクトの可視化を行なっています'
+    base_description = Settings.site.description
     if description.empty?
       base_description
     else
