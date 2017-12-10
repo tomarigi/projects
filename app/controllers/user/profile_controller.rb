@@ -1,4 +1,4 @@
-class User::ProfileController < ApplicationController
+class User::ProfileController < User::ApplicationController
 
   before_action :set_user, only: [:index, :edit, :update]
 
