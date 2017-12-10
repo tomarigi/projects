@@ -68,6 +68,9 @@ gem 'cancancan'
 # auto link
 gem 'rails_autolink'
 
+# Constant words
+gem 'settingslogic'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
