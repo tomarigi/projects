@@ -1,4 +1,4 @@
-class User::ProjectsController < ApplicationController
+class User::ProjectsController < UserController
 
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 

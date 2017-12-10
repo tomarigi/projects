@@ -1,0 +1,24 @@
+<!-- user/application -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tomarigi Project</title>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'user/application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+  <%= favicon_link_tag('favicon.ico') %>
+  <%= render 'layouts/analytics' %>
+  <%= render 'layouts/shim' %>
+</head>
+
+<body>
+<%= render 'layouts/header' %>
+<%= render 'shared/flash' %>
+<%= yield %>
+<%= render 'layouts/footer' %>
+</body>
+</html>
