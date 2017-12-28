@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913110532) do
+ActiveRecord::Schema.define(version: 20171228130759) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20170913110532) do
     t.string "organization"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "twitter"
+    t.string "facebook"
     t.index ["title", "user_id"], name: "index_projects_on_title_and_user_id", unique: true
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
