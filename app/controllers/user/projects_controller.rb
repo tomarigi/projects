@@ -59,7 +59,9 @@ class User::ProjectsController < User::ApplicationController
         :is_published,
         :organization,
         :url,
-        :established_at
+        :established_at,
+        :twitter,
+        :facebook
     ])
   end
 
