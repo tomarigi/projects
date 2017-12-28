@@ -6,6 +6,10 @@ class Project < ApplicationRecord
 
   mount_uploader :main_image, ImageUploader
 
+  # don't forget those if you use :attr_accessible
+  # (delete method and form caching method are provided by Carrierwave and used by RailsAdmin)
+  # attr_accessor :main_image, :asset_cache, :remove_asset
+
   def status
     self.is_published ? 'unlock-alt' : 'lock'
   end
@@ -15,7 +19,7 @@ class Project < ApplicationRecord
   end
 
   def image
-    self.main_image.present? ? self.main_image : 'default-thumbnail.jpg'
+    self.main_image.file.nil? ? 'default-thumbnail.jpg' : self.main_image
   end
 
 end
